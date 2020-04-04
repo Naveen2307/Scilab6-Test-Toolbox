@@ -1,0 +1,1 @@
+int add(double* ans, double num1, double num2);
