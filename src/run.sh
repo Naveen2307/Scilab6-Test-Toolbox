@@ -1,8 +1,8 @@
 rm *.o *.so *.lib test
 
-gcc -fPIC -c add.c
-gcc -shared -o libadd.so add.o
+gcc -fPIC -c mul.c
+gcc -shared -o libadd.so mul.o
 gcc -L$(pwd) -Wl,-rpath=$(pwd) -o test main.c -ladd -g
 
-cp add.h ../thirdparty/linux/include/
-cp libadd.so ../thirdparty/linux/lib/x64/
+cp mul.h ../thirdparty/linux/include/
+cp libmul.so ../thirdparty/linux/lib/x64/
