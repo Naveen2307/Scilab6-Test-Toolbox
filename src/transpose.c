@@ -1,13 +1,13 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include "transpose.h"
-int transpose(int n,int (*a)[n],int b[][n])
+int transpose(int n,double *a,double *b)
 {
-  for(int i=0;i<n;i++)
+  for(int i=0;i<(n);i++)
 	{
 		for(int j=0;j<n;j++)
 		{
-			*(*(a+i)+j)=b[j][i];
+			a[(n*i)+j]=b[(j*n)+i];
 		}
 	}	
  return 0;

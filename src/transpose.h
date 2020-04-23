@@ -1,1 +1,1 @@
-int transpose(int n,int (*a)[n],int b[][n]);
+int transpose(int n,double *a,double *b);

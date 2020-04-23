@@ -10,7 +10,7 @@ extern "C"
 
 
 static const char fname[] = "transpose";
-int sci_multiply(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* opt, int nout, scilabVar* out)
+int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* opt, int nout, scilabVar* out)
 
 {
 	double* in1 = NULL;
@@ -40,18 +40,10 @@ int sci_multiply(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* opt
 	scilab_getDoubleArray(env, in[0], &in1);
  
 	int i,j,n=row;
-	double arr[n][n];
+	
 
-	for(i=0;i<n;i++)
-	{
-	for(j=0;j<n;j++)
-	{
-	arr[i][j]= (*(in1+i)+j);
-	}
-	}
-
-	double b[n][n];
-	transpose(row,b,arr);
+	double b[n*n];
+	transpose(row,b,in1);
 	
 	out[0]=scilab_createDoubleMatrix2d(env, row,col, 0);
 
@@ -60,7 +52,7 @@ int sci_multiply(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* opt
 	{
 	for(j=0;j<n;j++)
 	{
-	out[i][j]=b[i][j];
+	out[i][j]=b[(i*n)+j];
 	}
 	}
 	
