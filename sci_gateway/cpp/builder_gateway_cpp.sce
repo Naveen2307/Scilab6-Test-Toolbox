@@ -21,10 +21,11 @@ Function_Names = [
         
         //fun function
         "multiply","sci_multiply", "csci6";
+        "transpose","sci_transpose","csci6";
     ];
 
 //Name of all the files to be compiled
-Files = "sci_multiply.cpp";
+Files = "sci_multiply.cpp","sci_transpose.cpp";
 
 
 
