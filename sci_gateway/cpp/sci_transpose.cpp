@@ -22,7 +22,7 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
     if (nin != 1)
     {
         Scierror(999, _("%s: Wrong number of input arguments: %d expected.\n"), fname, 1);
-        return 0;
+        return 1;
     }
 
     if (nout != 1)
@@ -52,7 +52,7 @@ int sci_transpose(scilabEnv env, int nin, scilabVar* in, int nopt, scilabOpt* op
 	{
 	for(j=0;j<n;j++)
 	{
-	out[i][j]=b[(i*n)+j];
+	out1[(i*n)+j]=b[(i*n)+j];
 	}
 	}
 	
